@@ -64,6 +64,69 @@
                 <p class="sub color">- From 08:00 am to 10:00 pm -</p>
                 <h3 class="font-heaading">Order Online</h3>
             </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="new-contact">
+                        <div class="form-group">
+                            <label for="new-first-name">First name</label>
+                            <input type="text" class="form-control" id="new-first-name" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="new-last-name">Last name</label>
+                            <input type="text" class="form-control" id="new-last-name" />
+                        </div>
+
+                        <div id="new-addresses">
+                            <div class="new-address">
+                                <div class="form-group">
+                                    <label for="new-size">Size of Pizza</label>
+                                    <select class="form-control" id="select-size" required>
+                      <option disabled selected hidden>-select size-</option>
+                      <option>small</option>
+                      <option>medium</option>
+                      <option>Large</option>
+                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-crust">Crust</label>
+                                    <select class="form-control" id="select-crust" required>
+                      <option disabled selected hidden>-select crust-</option>
+                      <option>crispy</option>
+                      <option>stuffed</option>
+                      <option>glutten-free</option>
+                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-topping">Toppings</label>
+                                    <select class="form-control" id="select-topping" required>
+                      <option disabled selected hidden>-select topping-</option>
+                      <option>pepperoni</option>
+                      <option>supreme</option>
+                      <option>hawaiian</option>
+                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="btn btn-primary" id="add-order">Another order</span>
+                        <button type="submit" class="btn btn-success">Add</button>
+                    </form>
+
+                    <h2>Receipt:</h2>
+                    <ul id="receipts"></ul>
+                </div>
+
+                <div class="col-md-6">
+                    <div id="show-receipt">
+                        <h2></h2>
+                        <p>First name: <span class="first-name"></span></p>
+                        <p>Last name: <span class="last-name"></span></p>
+                        <p>Addresses:</p>
+                        <ul id="receipt-List"></ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <h1 id="gallery"></h1>
@@ -75,6 +138,7 @@
             </div>
         </div>
     </section>
+
     <section class="ftr">
         <footer>
             <div class="card-footer">
