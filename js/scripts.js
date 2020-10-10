@@ -64,4 +64,72 @@ $(document).ready(function() {
             "</div>"
         );
     });
+
+    $("form#yo-order").submit(function(event) {
+        event.preventDefault();
+
+        var inputFname = $(this).find("input#new-first-name").val();
+        var inputLname = $(this).find("input#new-last-name").val();
+        var newPerson = new Person(inputFname, inputLname);
+        console.log(newPerson);
+        $(".new-order").each(function() {
+            var inputSize = $("#select-size").find(":selected").text();
+            console.log(inputSize);
+            var inputCrust = $("#select-crust").find(":selected").text();
+            console.log(inputCrust);
+            var inputToppings = $("#select-topping").find(":selected").text();
+            console.log(inputToppings);
+            var price = 0;
+            var priceTopping = 0;
+            var pizzaCrust = ["crispy", "stuffed", "gluten-free"];
+            var pizzaTop = ["pepperoni", "supreme", "hawaiian"];
+            for (var i = 0; i < 2; i++) {
+                if (inputSize == "small" && inputCrust == pizzaCrust[i]) {
+                    price = parseInt(price + 2500);
+                } else if (inputSize == "medium" && inputCrust == pizzaCrust[i]) {
+                    price = parseInt(price + 3500);
+                } else if (inputSize == "large" && inputCrust == pizzaCrust[i]) {
+                    price = parseInt(price + 2500);
+                }
+            }
+            var newSize = new Size(inputSize, price);
+            var newCrust = new Crust(inputCrust);
+            newCrust.sizes.push(newSize);
+            console.log(newCrust);
+            for (var j = 0; j < 2; j++) {
+                if (inputSize == "small" && inputToppings == pizzaTop[j]) {
+                    priceTopping = parseInt(price + 3500);
+                } else if (inputSize == "medium" && inputToppings == pizzaTop[j]) {
+                    priceTopping = parseInt(price + 4500);
+                } else if (inputSize == "large" && inputToppings == pizzaTop[j]) {
+                    priceTopping = parseInt(price + 5500);
+                }
+            }
+            var newSize = new Size(inputSize, priceTopping);
+            var newTopping = new Toppings(inputToppings);
+
+            newTopping.sizes.push(newSize);
+            console.log(newTopping);
+        });
+        console.log("getting in a list");
+        $("ul#receipts").append(
+            "<li><span class='haveit'>" + newPerson.fullNames() + "</span></li>"
+        );
+        console.log("done with list");
+        $(".haveit")
+            .last()
+            .click(function() {
+                $("#show-receipt").show();
+                $("#show-receipt h2").text(newPerson.fullNames());
+                $(".first-name").text(newPerson.firstName);
+                $(".last-name").text(newPerson.lastName);
+                $("ul#receipt-List").text("");
+                newCrust.sizes.forEach(function(size) {
+                    $("ul#receipt-List").append("<li>" + size.SizeofPizza() + "</li>");
+                });
+                newTopping.sizes.forEach(function(size) {
+                    $("ul#receipt-List").append("<li>" + size.SizeofPizza() + "</li>");
+                });
+            });
+    });
 });

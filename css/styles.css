@@ -205,6 +205,10 @@ nav ul li a {
     min-height: 60vh;
 }
 
+#show-receipt {
+    display: none;
+}
+
 .sec5 {
     min-height: 60vh;
 }
