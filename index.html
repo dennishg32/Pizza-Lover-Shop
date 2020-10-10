@@ -68,66 +68,74 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <form id="yo-order">
-                        <div class="form-group">
-                            <label for="new-first-name">First name</label>
-                            <input type="text" class="form-control" id="new-first-name" placeholder="Enter your firstName" />
-                        </div>
+                    <div class="bgImage">
+                        <form id="yo-order">
+                            <div class="form-group">
+                                <label for="new-first-name">First name</label>
+                                <input type="text" class="form-control" id="new-first-name" placeholder="Enter your firstName" />
+                            </div>
 
-                        <div class="form-group">
-                            <label for="new-last-name">Last name</label>
-                            <input type="text" class="form-control" id="new-last-name" placeholder="Enter your lastName" />
-                        </div>
+                            <div class="form-group">
+                                <label for="new-last-name">Last name</label>
+                                <input type="text" class="form-control" id="new-last-name" placeholder="Enter your lastName" />
+                            </div>
 
-                        <div id="new-orders">
-                            <div class="new-order">
-                                <div class="form-group">
-                                    <label for="new-size">Size of Pizza</label>
-                                    <select class="form-control" id="select-size">
-                      <option disabled selected hidden>-select size-</option>
-                      <option>small</option>
-                      <option>medium</option>
-                      <option>large</option>
-                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="new-crust">Crust</label>
-                                    <select class="form-control" id="select-crust">
-                      <option disabled selected hidden>-select crust-</option>
-                      <option>crispy</option>
-                      <option>stuffed</option>
-                      <option>glutten-free</option>
-                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="new-topping">Toppings</label>
-                                    <select class="form-control" id="select-topping">
-                      <option disabled selected hidden>-select topping-</option>
-                      <option>pepperoni</option>
-                      <option>supreme</option>
-                      <option>hawaiian</option>
-                    </select>
+                            <div id="new-orders">
+                                <div class="new-order">
+                                    <div class="form-group">
+                                        <label for="new-size">Size of Pizza</label>
+                                        <select class="form-control" id="select-size">
+                        <option disabled selected hidden>-select size-</option>
+                        <option>small</option>
+                        <option>medium</option>
+                        <option>large</option>
+                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new-crust">Crust</label>
+                                        <select class="form-control" id="select-crust">
+                        <option disabled selected hidden>-select crust-</option>
+                        <option>crispy</option>
+                        <option>stuffed</option>
+                        <option>glutten-free</option>
+                      </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="new-topping">Toppings</label>
+                                        <select class="form-control" id="select-topping">
+                        <option disabled selected hidden>
+                          -select topping-
+                        </option>
+                        <option>pepperoni</option>
+                        <option>supreme</option>
+                        <option>hawaiian</option>
+                      </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <span class="btn btn-primary" id="add-order">Another order</span>
-                        <button type="submit" class="btn btn-success">Order</button>
-                    </form>
+                            <span class="btn btn-primary" id="add-order">Another order</span
+                >
+                <button type="submit" class="btn btn-success">Order</button>
+              </form>
+            </div>
+          </div>
 
-                    <h2>Receipt:</h2>
-                    <ul id="receipts"></ul>
-                </div>
-
-                <div class="col-md-6">
-                    <div id="show-receipt">
-                        <h2></h2>
-                        <p>First name: <span class="first-name"></span></p>
-                        <p>Last name: <span class="last-name"></span></p>
-                        <p>your Order:</p>
-                        <ul id="crust-List"></ul>
-                        <ul id="topping-List"></ul>
-                        <p>Total Amount: <span class="totalAmount"></span></p>
+          <div class="col-md-6">
+            <div id="show-receipt">
+              <h2 style="color: #f00">RECEIPT</h2>
+              <p>First name: <span class="first-name"></span></p>
+                            <p>Last name: <span class="last-name"></span></p>
+                            <p>Crust Choice: <span class="crustname"></span></p>
+                            <p>Topping Choice: <span class="topname"></span></p>
+                            <ul id="crust-List">
+                                Crust size and price:
+                            </ul>
+                            <ul id="topping-List">
+                                Toppings size and price:
+                            </ul>
+                            <p>Delivery Cost is 1000 Rwf only Calculated when you say yes</p>
+                            <p>Total Amount: <span class="totalAmount"></span>Rwf</p>
                     </div>
                 </div>
             </div>

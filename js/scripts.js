@@ -30,9 +30,24 @@ Toppings.prototype.ToppingsofPizza = function() {
     return this.name;
 };
 
-function summation(top, crust) {
+function Summation(top, crust) {
     var sum = 0;
-    sum = sum + top + crust;
+    var ask, city;
+    var dvprice = 1000;
+    ask = prompt(
+        "Please Type yes if you want your Pizza to be delivered at home or type no if u dont want it!"
+    );
+    if (ask == "yes") {
+        city = prompt("Please enter the location");
+        alert(
+            "Additional Cost for every pizza delivery 1000frw and it will be delivered at " +
+            city
+        );
+        sum = sum + top + crust + dvprice;
+    } else {
+        alert("Thank You for choosing Pizza Lover Shop!");
+        sum = sum + top + crust;
+    }
     return sum;
 }
 
@@ -84,7 +99,6 @@ $(document).ready(function() {
             var inputCrust = $("#select-crust").find(":selected").text();
 
             var inputToppings = $("#select-topping").find(":selected").text();
-            var count = 0;
             var price = 0;
             var priceTopping = 0;
 
@@ -98,7 +112,6 @@ $(document).ready(function() {
                 } else if (inputSize == "large" && inputCrust == pizzaCrust[i]) {
                     price = parseInt(price + 4500);
                 }
-                count + 1;
             }
             var newSize = new Size(inputSize, price);
             var newCrust = new Crust(inputCrust);
@@ -112,7 +125,6 @@ $(document).ready(function() {
                 } else if (inputSize == "large" && inputToppings == pizzaTop[j]) {
                     priceTopping = parseInt(priceTopping + 6500);
                 }
-                count + 1;
             }
             count + 1;
             var newSize = new Size(inputSize, priceTopping);
@@ -120,29 +132,22 @@ $(document).ready(function() {
 
             newTopping.sizes.push(newSize);
             console.log(newTopping);
-            console.log(
-                "The Total amount to pay is: " + summation(price, priceTopping)
-            );
-        });
+            // console.log(
+            //     "The Total amount to pay is: " + Summation(price, priceTopping)
+            // );
+            $("#show-receipt").show();
+            $(".first-name").text(newPerson.firstName);
+            $(".last-name").text(newPerson.lastName);
+            $(".crustname").text(newCrust.name);
 
-        $("ul#receipts").append(
-            "<li><span class='haveit'>" + newPerson.fullNames() + "</span></li>"
-        );
-        console.log("done with list");
-        $(".haveit")
-            .last()
-            .click(function() {
-                $("#show-receipt").show();
-                $("#show-receipt h2").text(newPerson.fullNames());
-                $(".first-name").text(newPerson.firstName);
-                $(".last-name").text(newPerson.lastName);
-                $("ul#receipt-List").text("");
-                newCrust.sizes.forEach(function(size) {
-                    $("ul#receipt-List").append("<li>" + size.SizeofPizza() + "</li>");
-                });
-                newTopping.sizes.forEach(function(size) {
-                    $("ul#receipt-List").append("<li>" + size.SizeofPizza() + "</li>");
-                });
+            newCrust.sizes.forEach(function(size) {
+                $("ul#crust-List").append("<li>" + size.SizeofPizza() + "</li>");
             });
+            $(".topname").text(newTopping.name);
+            newTopping.sizes.forEach(function(size) {
+                $("ul#topping-List").append("<li>" + size.SizeofPizza() + "</li>");
+            });
+            $(".totalAmount").text(Summation(price, priceTopping));
+        });
     });
 });

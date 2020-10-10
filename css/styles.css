@@ -205,13 +205,22 @@ nav ul li a {
     min-height: 60vh;
 }
 
+.bgImage {
+    background: url(/images/shpcatorn.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 #show-receipt {
     display: none;
     border-width: 1px 0;
     border-style: solid;
     padding: 4px 15px 0;
-    margin-top: 50px;
-    font-size: 32px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    /* display: table-cell; */
+    vertical-align: middle;
 }
 
 .sec5 {
