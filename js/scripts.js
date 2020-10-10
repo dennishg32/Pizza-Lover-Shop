@@ -54,9 +54,9 @@ function Summation(top, crust) {
 function resetFields() {
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
-    $("#select-size").val("");
-    $("#select-crust").val("");
-    $("#select-topping").val("");
+    $("#select-size").val("clear");
+    $("#select-crust").val("clear");
+    $("#select-topping").val("clear");
 }
 
 $(document).ready(function() {
