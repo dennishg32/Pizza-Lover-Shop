@@ -51,6 +51,14 @@ function Summation(top, crust) {
     return sum;
 }
 
+function resetFields() {
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("#select-size").val("");
+    $("#select-crust").val("");
+    $("#select-topping").val("");
+}
+
 $(document).ready(function() {
     $("#add-order").click(function() {
         $("#new-orders").append(
@@ -126,7 +134,6 @@ $(document).ready(function() {
                     priceTopping = parseInt(priceTopping + 6500);
                 }
             }
-            count + 1;
             var newSize = new Size(inputSize, priceTopping);
             var newTopping = new Toppings(inputToppings);
 
@@ -149,5 +156,6 @@ $(document).ready(function() {
             });
             $(".totalAmount").text(Summation(price, priceTopping));
         });
+        resetFields();
     });
 });
