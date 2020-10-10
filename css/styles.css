@@ -207,6 +207,11 @@ nav ul li a {
 
 #show-receipt {
     display: none;
+    border-width: 1px 0;
+    border-style: solid;
+    padding: 4px 15px 0;
+    margin-top: 50px;
+    font-size: 32px;
 }
 
 .sec5 {
