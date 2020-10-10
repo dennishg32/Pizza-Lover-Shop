@@ -34,15 +34,13 @@ function Summation(top, crust) {
     var sum = 0;
     var ask, city;
     var dvprice = 1000;
+    alert("Additional Cost for every pizza delivery is only 1000frw");
     ask = prompt(
         "Please Type yes if you want your Pizza to be delivered at home or type no if u dont want it!"
     );
     if (ask == "yes") {
         city = prompt("Please enter the location");
-        alert(
-            "Additional Cost for every pizza delivery 1000frw and it will be delivered at " +
-            city
-        );
+        alert("Your Pizza Choice will be delivered at " + city);
         sum = sum + top + crust + dvprice;
     } else {
         alert("Thank You for choosing Pizza Lover Shop!");
