@@ -49,13 +49,17 @@ function Summation(top, crust) {
     return sum;
 }
 
-function resetFields() {
+function ResetFields() {
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
     $("#select-size").val("clear");
     $("#select-crust").val("clear");
     $("#select-topping").val("clear");
 }
+var price = 0;
+var priceTopping = 0;
+var pizzaCrust = ["crispy", "stuffed", "glutten-free"];
+var pizzaTop = ["pepperoni", "supreme", "hawaiian"];
 
 $(document).ready(function() {
     $("#add-order").click(function() {
@@ -97,23 +101,17 @@ $(document).ready(function() {
 
     $("form#yo-order").submit(function(event) {
         event.preventDefault();
-
         var inputFname = $(this).find("input#new-first-name").val();
         var inputLname = $(this).find("input#new-last-name").val();
         var newPerson = new Person(inputFname, inputLname);
         console.log(newPerson);
+        var n = 30;
         $(".new-order").each(function() {
             var inputSize = $("#select-size").find(":selected").text();
-
             var inputCrust = $("#select-crust").find(":selected").text();
-
             var inputToppings = $("#select-topping").find(":selected").text();
-            var price = 0;
-            var priceTopping = 0;
 
-            var pizzaCrust = ["crispy", "stuffed", "glutten-free"];
-            var pizzaTop = ["pepperoni", "supreme", "hawaiian"];
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < n; i++) {
                 if (inputSize == "small" && inputCrust == pizzaCrust[i]) {
                     price = parseInt(price + 2500);
                 } else if (inputSize == "medium" && inputCrust == pizzaCrust[i]) {
@@ -122,11 +120,12 @@ $(document).ready(function() {
                     price = parseInt(price + 4500);
                 }
             }
+
             var newSize = new Size(inputSize, price);
             var newCrust = new Crust(inputCrust);
             newCrust.sizes.push(newSize);
             console.log(newCrust);
-            for (var j = 0; j < 3; j++) {
+            for (var j = 0; j < n; j++) {
                 if (inputSize == "small" && inputToppings == pizzaTop[j]) {
                     priceTopping = parseInt(priceTopping + 3500);
                 } else if (inputSize == "medium" && inputToppings == pizzaTop[j]) {
@@ -135,19 +134,16 @@ $(document).ready(function() {
                     priceTopping = parseInt(priceTopping + 6500);
                 }
             }
+
             var newSize = new Size(inputSize, priceTopping);
             var newTopping = new Toppings(inputToppings);
 
             newTopping.sizes.push(newSize);
             console.log(newTopping);
-            // console.log(
-            //     "The Total amount to pay is: " + Summation(price, priceTopping)
-            // );
             $("#show-receipt").show();
             $(".first-name").text(newPerson.firstName);
             $(".last-name").text(newPerson.lastName);
             $(".crustname").text(newCrust.name);
-
             newCrust.sizes.forEach(function(size) {
                 $("ul#crust-List").append("<li>" + size.SizeofPizza() + "</li>");
             });
@@ -157,6 +153,6 @@ $(document).ready(function() {
             });
             $(".totalAmount").text(Summation(price, priceTopping));
         });
-        resetFields();
+        ResetFields();
     });
 });
