@@ -110,10 +110,6 @@ nav ul li a {
     text-transform: none;
 }
 
-.font-heading {
-    font-family: "Cinzel", serif;
-}
-
 .content p {
     letter-spacing: 1.5px;
     line-height: 1.72;
@@ -127,6 +123,73 @@ nav ul li a {
 
 .ourmenu {
     margin-top: 10px;
+}
+
+.dishes-menu .menu-item {
+    margin-bottom: 45px;
+    padding-bottom: 2px;
+    position: relative;
+    list-style: none;
+}
+
+.dishes-menu .thumbnail .attachment_image {
+    border-radius: 0 50% 50% 50%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+    transition: all 300ms ease-in-out;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+
+.dishes-menu .zoom-img {
+    position: absolute;
+    z-index: 10;
+    bottom: 85%;
+    left: 105%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease-in;
+}
+
+.dishes-menu .thumbnail img {
+    max-width: none;
+}
+
+.dishes-menu .post-thumbnail .description {
+    padding-left: 125px;
+}
+
+.dm-price {
+    float: right;
+    padding-left: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.dishes-menu .dots:before {
+    content: "";
+    border-top: 1px dashed;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.color-pr-tx {
+    color: #d1a054;
+}
+
+.dots .label {
+    font-size: 20px;
 }
 
 .sec3 {
@@ -408,5 +471,12 @@ nav ul li a {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .margin-large {
+        margin-left: -15px;
+        margin-right: -15px;
     }
 }
