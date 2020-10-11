@@ -2,7 +2,7 @@
 
 ## Description
 
-This is website for shopping and order your favorite Pizza and we reach you wherever you are, as we all know, order product has been playing a great role if i can say to help people to get what they want wherever they are without moving. So this website has brought a solution to people who love pizza.
+This is website for shopping and order your favorite Pizza and we reach you wherever you are, as we all know, ordering product has been playing a great role in this worldwide if i may say, it helps people to get what they want wherever they are without moving. So this website has brought a solution to people who love pizza.
 
 ## Demo
 
@@ -12,7 +12,7 @@ Here is a working git live page online demo: https://dennishg32.github.io/Pizza-
 
 Currently as you can see there is picture of landing page.
 
-<img src="https://github.com/dennishg32/DelaniStudio/blob/master/images/landing%20page.png" width="auto">
+<img src="https://github.com/dennishg32/Pizza-Lover-Shop/blob/master/images/Screenshot%20from%202020-10-11%2013-23-53.png" width="auto">
 
 ## Built with
 
@@ -31,13 +31,17 @@ To access this website you must have
 
 ## BDD
 
-- Client checks information
-- The web offers the client to contribute through the form of contact us
-- The website offers more information hidden inside of icons
+- Customer checks our Menu
+- Customer chooses the size of pizza
+- Customer chooses what kind of crust he or she would like the pizza to have
+- Customers choose the topping(s) they want on my pizza.
+- Customer has to place an order for Pizza and see the total charge for it.
+- Customers has an option to order as many pizzas as they want.
+- Customers have an option to have the pizza delivered or not. If delivered they will be alerted how much the delivery charge will be.
 
 ## Known Bugs
 
-If you find a bug, kindly open an issue [here](https://github.com/dennishg32/DelaniStudio/issues) by including your search and the expected result.
+If you find a bug, kindly open an issue [here](https://github.com/dennishg32/Pizza-Lover-Shop/issues) by including your search and the expected result.
 
 ## Author
 
