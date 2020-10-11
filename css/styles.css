@@ -227,6 +227,51 @@ nav ul li a {
     min-height: 60vh;
 }
 
+.picture {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 3px;
+}
+
+.picture img {
+    margin-top: 8px;
+    max-width: 250px;
+    transition: transform 2s;
+}
+
+.overlay-text {
+    position: absolute;
+    text-align-last: center;
+    width: 100%;
+    height: 100%;
+    top: 8px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transform: scaleY(0);
+}
+
+.overlay-text h4 {
+    position: absolute;
+    padding: 60px;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-left: 1px solid rgba(255, 255, 255, 0.8);
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.picture:hover .overlay-text {
+    transform: scaleY(1);
+}
+
 .ftr {
     margin-top: 3%;
     height: 5vh;
