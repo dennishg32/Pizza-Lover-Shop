@@ -282,8 +282,10 @@ img {
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 20px;
-    /* display: table-cell; */
-    /* vertical-align: middle; */
+}
+
+#actionOrder {
+    margin-bottom: 15px;
 }
 
 .sec5 {

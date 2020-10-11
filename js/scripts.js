@@ -91,6 +91,9 @@ $(document).ready(function() {
             "</div>"
         );
     });
+    $("#actionOrder").click(function() {
+        alert("Thank you for Choosing Pizza Lover Shop, see you at delivery");
+    });
 
     $("form#yo-order").submit(function(event) {
         event.preventDefault();
