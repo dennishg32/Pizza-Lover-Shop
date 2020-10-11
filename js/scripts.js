@@ -62,6 +62,20 @@ var pizzaCrust = ["crispy", "stuffed", "glutten-free"];
 var pizzaTop = ["pepperoni", "supreme", "hawaiian"];
 
 $(document).ready(function() {
+    $("#add-topping").click(function() {
+        $("#new-tops").append(
+            '<div class="form-group">' +
+            '<label for="new-topping">Toppings</label>' +
+            '<select class="form-control" id="select-topping">' +
+            '<option value="clear" disabled selected hidden>-select topping-</option>' +
+            "<option>pepperoni</option>" +
+            "<option>supreme</option>" +
+            "<option>hawaiian</option>" +
+            "</select>" +
+            "</div>" +
+            "</div>"
+        );
+    });
     $("#add-order").click(function() {
         $("#new-orders").append(
             '<div class="new-order">' +
