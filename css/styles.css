@@ -57,7 +57,7 @@ nav ul li a {
 }
 
 .load {
-    animation: slide 1s;
+    animation: slide 8s;
 }
 
 .content {
@@ -69,22 +69,22 @@ nav ul li a {
 
 @keyframes slide {
     0% {
-        background-image: url(../images/yopizza.jpg);
+        background-image: url(../images/prep.jpg);
     }
     20% {
-        background-image: url(../images/yopizza.jpg);
+        background-image: url(../images/italian\ pizza.jpeg);
     }
     20.01% {
-        background-image: url(../images/myp.jpg);
+        background-image: url(../images/italian\ pizza.jpeg);
     }
     40% {
-        background-image: url(../images/myp.jpg);
+        background-image: url(../images/supreme-pizza-toppings.jpg);
     }
     40.01% {
-        background-image: url(../images/yopizza.jpg);
+        background-image: url(../images/hawaiian.jpg);
     }
     100% {
-        background-image: url(../images/yopizza.jpg);
+        background-image: url(../images/myp.jpg);
     }
 }
 
@@ -375,7 +375,7 @@ img {
 
 .fa {
     padding: 10px;
-    font-size: 30px;
+    font-size: 20px;
     width: auto;
     text-align: center;
     text-decoration: none;
@@ -476,5 +476,11 @@ img {
     .margin-large {
         margin-left: -15px;
         margin-right: -15px;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #slider {
+        padding: 60px 0;
     }
 }
